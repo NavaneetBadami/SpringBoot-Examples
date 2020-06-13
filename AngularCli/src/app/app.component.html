@@ -1,0 +1,63 @@
+<h4>
+  {{title}}
+  <br>
+  {{myTitle}}
+  <br>
+  <hr>
+  <div *ngFor="let item of data">
+    <ul>
+        <li>{{item.id}}</li>
+        <li>{{item.name}}</li>
+    </ul>
+  </div>
+
+  <hr>
+  <ul>
+    <li><a [routerLink] = "['/ProductLink']">Product</a></li>
+    <li><a [routerLink] = "['/InventoryLink']">Inventory</a></li>
+    <li><a [routerLink] = "['/']">Reset</a></li>
+ </ul>
+ <router-outlet></router-outlet>
+
+ <hr>
+ <product-form></product-form>
+</h4>
+ <hr>
+  <h3>Data from App Service:</h3> {{appValue}} <br>
+  <h4>Data from Movie Service: <br> MovieID: {{movieId |uppercase}}<br> Rating: {{ratings}}<br> Zone: {{zone | uppercase}}</h4>
+<hr>
+<p>Third Party control Pagination: </p>
+<div *ngFor = 'let lst of appList'> 
+  <ul> 
+     <li>{{lst.ID}}</li> 
+     <li>{{lst.Name}}</li> 
+     <img [src] = 'lst.url'> 
+  </ul> 
+</div> 
+<pagination-controls (pageChange) = "p = $event"></pagination-controls>
+<hr>
+<div>
+  <input [value]="name" (input) = "name = $event.target.value">
+  {{name}}
+  <hr>
+  <label for=""> Events</label>
+  <button (click) ="clicked($event)">Click</button>
+  <p>Current status: {{clickStatus}}</p>
+  
+  <hr>
+  Date: The date of this Tutorial is {{newdate | date:"MM/dd/yy"}}<br>
+  The percentage is {{newValue | percent}}<br> 
+  The percentage is {{newValue | percent:'2.2-5'}}<br>  
+  <p>CustomePipe - Multiplier: {{2 | custMultiplier: 10}}</p>  
+
+  <hr>
+  <div>
+    <select>
+        <option *ngFor="let m of months"> {{m}}</option>
+    </select>
+  </div>
+  <span *ngIf = "isavailable; else condition1">Condition is valid.</span> 
+  <ng-template #condition1>Condition is invalid </ng-template>
+  
+</div>
+

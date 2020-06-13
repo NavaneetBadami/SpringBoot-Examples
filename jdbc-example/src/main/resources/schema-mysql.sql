@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS customer;
+
+CREATE TABLE test.customer(custId VARCHAR(10) NOT NULL, custName VARCHAR(30) NOT NULL);
