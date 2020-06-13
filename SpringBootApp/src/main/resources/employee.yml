@@ -1,0 +1,110 @@
+#Consider as default profile
+SERVER:
+ PORT: 2018
+ CONTEXT-PATH: /SpringBootAppDefault
+
+my:
+ emp-Name: "TestEmpDefault"
+ emp-Id: "343434"
+ location: Pune,Panvel        #definigList -- Method 1  
+ #User-Define List
+ empExp:
+  - employer: IBM
+    role: Trainee
+    ctc: 3.5
+    months: 12
+    #List
+    projects:
+     - MCAB
+     - DCO
+    empStatus: true
+  
+  - employer: JPMorgen
+    role: Software Engineer
+    ctc: 5.5
+    months: 24
+    projects:
+     - Taller
+     - Cards  
+  
+  - employer: Infosys
+    role: Anlysist
+    ctc: 7.5
+    months: 12
+    projects:
+       
+---
+ 
+spring:
+    profiles: dev
+    
+SERVER:
+ PORT: 2019
+ CONTEXT-PATH: /SpringBootAppDev
+ 
+my:
+  empName: "TestEmpDev"
+  empId: "565545"
+  location: Pune,Panvel #definigList -- Method 1  
+# location: #definigList -- Method 2
+#	- Pune,
+#	- Panvel  
+#User-Define List
+  empExp:
+   - employer: IBM
+     role: Trainee
+     ctc: 3.5
+     months: 12
+     #List
+     projects:
+      - MCAB
+      - DCO
+     
+  
+   - employer: JPMorgen
+     role: Software Engineer
+     ctc: 5.5
+     months: 24
+     projects:
+      - Taller
+      - Cards  
+
+---
+
+spring:
+    profiles: prod
+#     active: "prod"
+
+SERVER:
+ PORT: 2020
+ CONTEXT-PATH: /SpringBootAppProd
+my:
+  empName: "TestEmpProd"
+  empId: "78787"
+  location: Pune,Panvel
+  #User-Define List
+  empExp:
+   - employer: Accenture
+     role: Trainee
+     ctc: 3.5
+     months: 12
+     #List
+     projects:
+      - MCAB
+      - DCO  
+  
+   - employer: JPMorgen
+     role: Software Engineer
+     ctc: 5.5
+     months: 24
+     projects:
+      - Taller
+      - Cards  
+ 
+ 
+#Commands (yml file is meant for System configurations, this file loaded at time of Server Start-up)
+#java -jar -Dspring.profiles.active=prod SpringBootApp-0.0.2-SNAPSHOT.jar
+#person.firstName Standard camel case syntax.
+#person.first-name Dashed notation, recommended for use in .properties and .yml files.
+#person.first_name Underscore notation, alternative format for use in .properties and .yml files.
+#PERSON_FIRST_NAME Upper case format. Recommended when using a system environment variables.

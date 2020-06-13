@@ -1,0 +1,4 @@
+#Consider as default profile
+SERVER:
+ PORT: 2018
+ CONTEXT-PATH: /spawsapp
