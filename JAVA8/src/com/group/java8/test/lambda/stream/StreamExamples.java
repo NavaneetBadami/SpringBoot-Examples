@@ -333,9 +333,6 @@ class Trade {
 		return "Trade [tradeName=" + tradeName + ", secNO=" + secNO + ", ccNo="
 				+ ccNo + "]";
 	}
-	
-	
-
 }
 
 class ClearanceData {
