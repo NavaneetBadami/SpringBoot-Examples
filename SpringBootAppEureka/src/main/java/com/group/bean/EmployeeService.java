@@ -7,7 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.xml.ws.BindingType;
+
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,7 +20,7 @@ import org.springframework.validation.annotation.Validated;
 @ConfigurationProperties(prefix = "my")
 @Validated
 public class EmployeeService implements Serializable{
-	
+
 	/**
 	 * 
 	 */
